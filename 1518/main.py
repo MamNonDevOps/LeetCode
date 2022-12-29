@@ -1,9 +1,15 @@
 class Solution:
   def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
-    drinkBottles = numBottles
+    # First drink
+    result = numBottles
+    emptyBottles = numBottles
 
-    return drinkBottles
+    # While empty bottles >= numExchange
+    while emptyBottles >= numExchange:
+      numBottles = emptyBottles // numExchange
+      emptyBottles = emptyBottles % numExchange
 
-if __name__ == "__main__":
-  s = Solution()
-  print(s.numWaterBottles(9, 3))
+      result += numBottles
+      emptyBottles += numBottles
+
+    return result
