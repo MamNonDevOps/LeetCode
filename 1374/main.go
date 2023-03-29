@@ -18,6 +18,7 @@ func randCharacter() string {
   return string(lowerCaseLetters[rand.Intn(len(lowerCaseLetters))])
 }
 
+// Van con loi random bi trung ky tu
 func generateTheString1(n int) string {
   var result string
   for n > 0 {
@@ -30,7 +31,6 @@ func generateTheString1(n int) string {
       m -= 1
     }
     result = result + strings.Repeat(c, m)
-    fmt.Println(result, n, c, m)
     n = n -m
   }
 
@@ -57,11 +57,3 @@ func generateTheString2(n int) string {
 
   return result
 }
-
-func main () {
-
-  test := generateTheString2(4)
-
-  fmt.Println(test)
-}
-
